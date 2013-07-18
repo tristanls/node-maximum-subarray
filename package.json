@@ -1,0 +1,23 @@
+{
+  "name": "maximum-subarray",
+  "version": "0.1.0",
+  "description": "Maximum subarray",
+  "scripts": {
+    "test": "node scripts/test.js"
+  },
+  "main": "index.js",
+  "devDependencies": {
+    "nodeunit": "0.8.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tristanls/node-maximum-subarray.git"
+  },
+  "keywords": [
+    "maximum",
+    "subarray",
+    "algorithm"
+  ],
+  "author": "Tristan Slominski <tristan.slominski@gmail.com>",
+  "license": "MIT"
+}
