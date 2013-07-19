@@ -64,3 +64,15 @@ test['maximum subarray of [-7,12,-5,-22,15,-4,7] is [15,-4,7]'] = function (test
     test.deepEqual(maximumSubarray([-7,12,-5,-22,15,-4,7]), [15,-4,7]);
     test.done();
 };
+
+test['maximum subarray of [1] is [1]'] = function (test) {
+    test.expect(1);
+    test.deepEqual(maximumSubarray([1]), [1]);
+    test.done();
+};
+
+test['maximum subarray of [] is []'] = function (test) {
+    test.expect(1);
+    test.deepEqual(maximumSubarray([]), []);
+    test.done();
+};

@@ -38,7 +38,9 @@ var maximumSubarray = module.exports = function maximumSubarray (array) {
 
 var findMaximumSubarray = function findMaximumSubarray (array, low, high) {
     low = (typeof low === "undefined") ? 0 : low;
-    high = (typeof high === "undefined") ? array.length - 1: high;
+    if (typeof high === "undefined") {
+        high = array.length > 0 ? array.length - 1 : 0;
+    }
     if (high == low) {
         return {low: low, high: high, sum: array[low]}
     } else {
