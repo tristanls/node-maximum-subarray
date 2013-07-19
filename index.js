@@ -32,8 +32,28 @@ OTHER DEALINGS IN THE SOFTWARE.
 "use strict";
 
 var maximumSubarray = module.exports = function maximumSubarray (array) {
-    var result = findMaximumSubarray(array);
+    // var result = findMaximumSubarray(array);
+    var result = linearMaximumSubarray(array);
     return array.slice(result.low, result.high + 1);
+};
+
+var linearMaximumSubarray = function linearMaximumSubarray (array) {
+    var maxEndingHere = 0, maxSoFar = 0, low = 0, lowTemp = 0, high = 0;
+    for (var i = 0; i < array.length; i++) {
+        if (maxEndingHere < 0) {
+            maxEndingHere = array[i];
+            lowTemp = i;
+        } else {
+            maxEndingHere += array[i];
+        }
+
+        if (maxEndingHere > maxSoFar) {
+            maxSoFar = maxEndingHere;
+            low = lowTemp;
+            high = i;
+        }
+    }
+    return {low: low, high: high, sum: maxSoFar};
 };
 
 var findMaximumSubarray = function findMaximumSubarray (array, low, high) {
